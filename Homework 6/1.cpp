@@ -13,6 +13,7 @@ void print(const std::vector<int>& v)
 	std::cout << "\n";
 }
 
+
 void Team(std::vector<int>& v)
 {
 	std::vector<int> player1, player2;
