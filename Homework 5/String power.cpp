@@ -1,17 +1,29 @@
 #include<iostream>
-#include<fstream>
+#include<vector>
+#include<string>
 int main()
 {
-//	std::ofstream my_file("1_10000.txt");
-	//for (int i = 1; i < 10000; i++)
-		//my_file << i;
-	int n;
-	std::cin >> n;
-	std::fstream my_file("1_10000.txt");
-	char a;
-	for (int i = 0; i < n; i++)
-		my_file >> a;
-	std::cout << a << "\n";
+	std::string s;
+	int k;
+	std::cin >> s >> k;
+	std::string M, m;
+	if (k > 0)
+		for (int i = 0; i < k; ++i)
+			M += s;
 
-
+	if (k < 0)
+	{
+		k = abs(k);
+		if (s.size() % k == 0)
+		{
+			for (int i = 0; i < s.size() / k; ++i)
+				M += s[i];
+			for (int i = 0; i < k; ++i)
+				m += M;
+		}
+		if (m != s)
+			M = "undefined";
+	}
+	std::cout << M << "\n";
+	return 0;
 }
