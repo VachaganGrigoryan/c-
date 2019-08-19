@@ -12,7 +12,7 @@ std::string decode(unsigned int code){
 	std::ostringstream oss;
 	for( int  i= 0; i < 4; i++ )
     {
-		int maska = code;
+		unsigned int maska = code;
 		oss << (maska << i*8 >> 24) << (i==3 ?' ':'.');		
 	}
 	return oss.str();
